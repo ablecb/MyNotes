@@ -5,11 +5,11 @@ import org.springframework.context.annotation.Configuration;
 
 import com.enjoy.cap1.Person;
 
-//é…ç½®ç±»====é…ç½®æ–‡ä»¶
+//ÅäÖÃÀà====ÅäÖÃÎÄ¼ş
 @Configuration
 public class MainConfig {
-	//ç»™å®¹å™¨ä¸­æ³¨å†Œä¸€ä¸ªbean, ç±»å‹ä¸ºè¿”å›å€¼çš„ç±»å‹, 
-	@Bean("abcPerson")
+	//¸øÈİÆ÷ÖĞ×¢²áÒ»¸öbean, ÀàĞÍÎª·µ»ØÖµµÄÀàĞÍ, 
+	@Bean("XXX")
 	public Person person01(){
 		return new Person("james",20);
 	}

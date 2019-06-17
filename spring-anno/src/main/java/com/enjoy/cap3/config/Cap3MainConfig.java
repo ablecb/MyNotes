@@ -14,14 +14,14 @@ import com.enjoy.cap2.controller.OrderController;
 
 @Configuration
 public class Cap3MainConfig {
-	//ç»™å®¹å™¨ä¸­æ³¨å†Œä¸€ä¸ªbean, ç±»åž‹ä¸ºè¿”å›žå€¼çš„ç±»åž‹, é»˜è®¤æ˜¯å•å®žä¾‹
+	//¸øÈÝÆ÷ÖÐ×¢²áÒ»¸öbean, ÀàÐÍÎª·µ»ØÖµµÄÀàÐÍ, Ä¬ÈÏÊÇµ¥ÊµÀý
 	/*
-	 * prototype:å¤šå®žä¾‹: IOCå®¹å™¨å¯åŠ¨çš„æ—¶å€™,IOCå®¹å™¨å¯åŠ¨å¹¶ä¸ä¼šåŽ»è°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡, è€Œæ˜¯æ¯æ¬¡èŽ·å–çš„æ—¶å€™æ‰ä¼šè°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡
-	 * singleton:å•å®žä¾‹(é»˜è®¤):IOCå®¹å™¨å¯åŠ¨çš„æ—¶å€™ä¼šè°ƒç”¨æ–¹æ³•åˆ›å»ºå¯¹è±¡å¹¶æ”¾åˆ°IOCå®¹å™¨ä¸­,ä»¥åŽæ¯æ¬¡èŽ·å–çš„å°±æ˜¯ç›´æŽ¥ä»Žå®¹å™¨ä¸­æ‹¿(å¤§Map.get)çš„åŒä¸€ä¸ªbean
-	 * request: ä¸»è¦é’ˆå¯¹webåº”ç”¨, é€’äº¤ä¸€æ¬¡è¯·æ±‚åˆ›å»ºä¸€ä¸ªå®žä¾‹
-	 * session:åŒä¸€ä¸ªsessionåˆ›å»ºä¸€ä¸ªå®žä¾‹
+	 * prototype:¶àÊµÀý: IOCÈÝÆ÷Æô¶¯µÄÊ±ºò,IOCÈÝÆ÷Æô¶¯²¢²»»áÈ¥µ÷ÓÃ·½·¨´´½¨¶ÔÏó, ¶øÊÇÃ¿´Î»ñÈ¡µÄÊ±ºò²Å»áµ÷ÓÃ·½·¨´´½¨¶ÔÏó
+	 * singleton:µ¥ÊµÀý(Ä¬ÈÏ):IOCÈÝÆ÷Æô¶¯µÄÊ±ºò»áµ÷ÓÃ·½·¨´´½¨¶ÔÏó²¢·Åµ½IOCÈÝÆ÷ÖÐ,ÒÔºóÃ¿´Î»ñÈ¡µÄ¾ÍÊÇÖ±½Ó´ÓÈÝÆ÷ÖÐÄÃ(´óMap.get)µÄÍ¬Ò»¸öbean
+	 * request: Ö÷ÒªÕë¶ÔwebÓ¦ÓÃ, µÝ½»Ò»´ÎÇëÇó´´½¨Ò»¸öÊµÀý
+	 * session:Í¬Ò»¸ösession´´½¨Ò»¸öÊµÀý
 	 */
-	//@Scope("prototype")
+	@Scope("prototype")
 	@Bean
 	public Person person(){
 		return new Person("james",20);

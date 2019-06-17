@@ -7,20 +7,18 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 import com.enjoy.cap1.Person;
 import com.enjoy.cap2.controller.OrderController;
 
 @Configuration
-//@Controller  @Service  @Respostry  @Component
 @ComponentScan(value="com.enjoy.cap2", includeFilters={		
-		@Filter(type=FilterType.ANNOTATION, classes={Controller.class})		
+		@Filter(type=FilterType.CUSTOM, classes={JamesTypeFilter.class})		
 }, useDefaultFilters=false)
 
 
 public class Cap2MainConfig {
-	//缁欏鍣ㄤ腑娉ㄥ唽涓�涓猙ean, 绫诲瀷涓鸿繑鍥炲�肩殑绫诲瀷, 
+	//给容器中注册一个bean, 类型为返回值的类型, 
 	@Bean
 	public Person person01(){
 		return new Person("james",20);

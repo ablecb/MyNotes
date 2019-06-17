@@ -10,8 +10,8 @@ public class Cap4Test {
 	public void test01(){
 		AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(Cap4MainConfig.class);
 		
-		System.out.println("IOC瀹瑰櫒鍒涘缓瀹屾垚........");
-		app.getBean("person");//鎵ц鑾峰彇鐨勬椂鍊欐墠鍒涘缓骞跺垵濮嬪寲bean
+		System.out.println("IOC容器创建完成........");
+		app.getBean("person");//执行获取的时候才创建并初始化bean
 		
 	}
 }

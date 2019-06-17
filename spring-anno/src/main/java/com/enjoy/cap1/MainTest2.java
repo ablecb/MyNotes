@@ -8,15 +8,15 @@ import com.enjoy.cap1.config.MainConfig;
 
 public class MainTest2 { 
 	public static void main(String args[]){
-		//æŠŠbeans.xmlçš„ç±»åŠ è½½åˆ°å®¹å™¨
+		//°Ñbeans.xmlµÄÀà¼ÓÔØµ½ÈİÆ÷
 		//ApplicationContext app = new ClassPathXmlApplicationContext("beans.xml");
 		
 		ApplicationContext app = new AnnotationConfigApplicationContext(MainConfig.class);
 		
-		//ä»å®¹å™¨ä¸­è·å–bean
-		//Person person = (Person) app.getBean("person01");
+		//´ÓÈİÆ÷ÖĞ»ñÈ¡bean
+		Person person = (Person) app.getBean("XXX");
 		
-		//System.out.println(person);
+		System.out.println(person);
 		
 		String[] namesForBean = app.getBeanNamesForType(Person.class);
 		for(String name:namesForBean){

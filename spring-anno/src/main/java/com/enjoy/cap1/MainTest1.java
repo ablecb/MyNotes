@@ -5,9 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainTest1 { 
 	public static void main(String args[]){
-		//æŠŠbeans.xmlçš„ç±»åŠ è½½åˆ°å®¹å™¨
+		//°Ñbeans.xmlµÄÀà¼ÓÔØµ½ÈİÆ÷
 		ApplicationContext app = new ClassPathXmlApplicationContext("beans.xml");
-		//ä»å®¹å™¨ä¸­è·å–bean
+		//´ÓÈİÆ÷ÖĞ»ñÈ¡bean
 		Person person = (Person) app.getBean("person");
 		
 		System.out.println(person);
