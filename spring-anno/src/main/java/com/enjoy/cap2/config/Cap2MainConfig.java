@@ -7,13 +7,15 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.enjoy.cap1.Person;
 import com.enjoy.cap2.controller.OrderController;
 
 @Configuration
+//@Controller  @Service  @Respostry  @Component
 @ComponentScan(value="com.enjoy.cap2", includeFilters={		
-		@Filter(type=FilterType.CUSTOM, classes={JamesTypeFilter.class})		
+		@Filter(type=FilterType.ANNOTATION, classes={Controller.class})		
 }, useDefaultFilters=false)
 
 

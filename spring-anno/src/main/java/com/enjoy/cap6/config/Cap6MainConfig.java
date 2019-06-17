@@ -12,27 +12,21 @@ import com.enjoy.cap6.bean.Dog;
 @Import(value = { Dog.class,Cat.class, JamesImportSelector.class,JamesImportBeanDefinitionRegistrar.class })
 public class Cap6MainConfig {
 	/*
-	 * ç»™å®¹å™¨ä¸­æ³¨å†Œç»„ä»¶çš„æ–¹å¼
-	 * 1,@Bean: [å¯¼å…¥ç¬¬ä¸‰æ–¹çš„ç±»æˆ–åŒ…çš„ç»„ä»¶],æ¯”å¦‚Personä¸ºç¬¬ä¸‰æ–¹çš„ç±», éœ€è¦åœ¨æˆ‘ä»¬çš„IOCå®¹å™¨ä¸­ä½¿ç”¨
-	 * 2,åŒ…æ‰«æ+ç»„ä»¶çš„æ ‡æ³¨æ³¨è§£(@ComponentScan:  @Controller, @Service  @Reponsitory  @ Componet),ä¸€èˆ¬æ˜¯é’ˆå¯¹ æˆ‘ä»¬è‡ªå·±å†™çš„ç±»,ä½¿ç”¨è¿™ä¸ª
-	 * 3,@Import:[å¿«é€Ÿç»™å®¹å™¨å¯¼å…¥ä¸€ä¸ªç»„ä»¶] æ³¨æ„:@Beanæœ‰ç‚¹ç®€å•
-	 *      a,@Import(è¦å¯¼å…¥åˆ°å®¹å™¨ä¸­çš„ç»„ä»¶):å®¹å™¨ä¼šè‡ªåŠ¨æ³¨å†Œè¿™ä¸ªç»„ä»¶,bean çš„ idä¸ºå…¨ç±»å
-	 *      b,ImportSelector:æ˜¯ä¸€ä¸ªæ¥å£,è¿”å›éœ€è¦å¯¼å…¥åˆ°å®¹å™¨çš„ç»„ä»¶çš„å…¨ç±»åæ•°ç»„
-	 *      c,ImportBeanDefinitionRegistrar:å¯ä»¥æ‰‹åŠ¨æ·»åŠ ç»„ä»¶åˆ°IOCå®¹å™¨, æ‰€æœ‰Beançš„æ³¨å†Œå¯ä»¥ä½¿ç”¨BeanDifinitionRegistry
-	 *          å†™JamesImportBeanDefinitionRegistrarå®ç°ImportBeanDefinitionRegistraræ¥å£å³å¯
-	 *  4,ä½¿ç”¨Springæä¾›çš„FactoryBean(å·¥å‚bean)è¿›è¡Œæ³¨å†Œ
+	 * ¸øÈİÆ÷ÖĞ×¢²á×é¼şµÄ·½Ê½
+	 * 1,@Bean: [µ¼ÈëµÚÈı·½µÄÀà»ò°üµÄ×é¼ş],±ÈÈçPersonÎªµÚÈı·½µÄÀà, ĞèÒªÔÚÎÒÃÇµÄIOCÈİÆ÷ÖĞÊ¹ÓÃ
+	 * 2,°üÉ¨Ãè+×é¼şµÄ±ê×¢×¢½â(@ComponentScan:  @Controller, @Service  @Reponsitory  @ Componet),Ò»°ãÊÇÕë¶Ô ÎÒÃÇ×Ô¼ºĞ´µÄÀà,Ê¹ÓÃÕâ¸ö
+	 * 3,@Import:[¿ìËÙ¸øÈİÆ÷µ¼ÈëÒ»¸ö×é¼ş] ×¢Òâ:@BeanÓĞµã¼òµ¥
+	 *      a,@Import(Òªµ¼Èëµ½ÈİÆ÷ÖĞµÄ×é¼ş):ÈİÆ÷»á×Ô¶¯×¢²áÕâ¸ö×é¼ş,bean µÄ idÎªÈ«ÀàÃû
+	 *      b,ImportSelector:ÊÇÒ»¸ö½Ó¿Ú,·µ»ØĞèÒªµ¼Èëµ½ÈİÆ÷µÄ×é¼şµÄÈ«ÀàÃûÊı×é
+	 *      c,ImportBeanDefinitionRegistrar:¿ÉÒÔÊÖ¶¯Ìí¼Ó×é¼şµ½IOCÈİÆ÷, ËùÓĞBeanµÄ×¢²á¿ÉÒÔÊ¹ÓÃBeanDifinitionRegistry
+	 *          Ğ´JamesImportBeanDefinitionRegistrarÊµÏÖImportBeanDefinitionRegistrar½Ó¿Ú¼´¿É
+	 *  4,Ê¹ÓÃSpringÌá¹©µÄFactoryBean(¹¤³§bean)½øĞĞ×¢²á
 	 *     
 	 *   
 	 */
-	//å®¹å™¨å¯åŠ¨æ—¶åˆå§‹åŒ–personçš„beanå®ä¾‹
+	//ÈİÆ÷Æô¶¯Ê±³õÊ¼»¯personµÄbeanÊµÀı
 	@Bean("person")
-	public Person persond(){
-		System.out.println("aaaaaaaaaaaa");
-		return new Person("james",20);
-	}
-	//@Bean("person1")
-	public Person persona(int a){
-		System.out.println("bbbbbbbbbbb");
+	public Person person(){
 		return new Person("james",20);
 	}
 	@Bean

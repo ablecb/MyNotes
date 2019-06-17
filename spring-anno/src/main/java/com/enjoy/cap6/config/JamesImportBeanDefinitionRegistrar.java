@@ -10,17 +10,17 @@ import com.enjoy.cap6.bean.Pig;
 public class JamesImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
 
 	/*
-	*AnnotationMetadata:å½“å‰ç±»çš„æ³¨è§£ä¿¡æ¯
-	*BeanDefinitionRegistry:BeanDefinitionæ³¨å†Œç±»
-	*    æŠŠæ‰€æœ‰éœ€è¦æ·»åŠ åˆ°å®¹å™¨ä¸­çš„beanåŠ å…¥;
+	*AnnotationMetadata:µ±Ç°ÀàµÄ×¢½âĞÅÏ¢
+	*BeanDefinitionRegistry:BeanDefinition×¢²áÀà
+	*    °ÑËùÓĞĞèÒªÌí¼Óµ½ÈİÆ÷ÖĞµÄbean¼ÓÈë;
 	*    @Scope
 	*/
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 		boolean bean1 = registry.containsBeanDefinition("com.enjoy.cap6.bean.Dog");
 		boolean bean2 = registry.containsBeanDefinition("com.enjoy.cap6.bean.Cat");
-		//å¦‚æœDogå’ŒCatåŒæ—¶å­˜åœ¨äºæˆ‘ä»¬IOCå®¹å™¨ä¸­,é‚£ä¹ˆåˆ›å»ºPigç±», åŠ å…¥åˆ°å®¹å™¨
-		//å¯¹äºæˆ‘ä»¬è¦æ³¨å†Œçš„bean, ç»™beanè¿›è¡Œå°è£…,
+		//Èç¹ûDogºÍCatÍ¬Ê±´æÔÚÓÚÎÒÃÇIOCÈİÆ÷ÖĞ,ÄÇÃ´´´½¨PigÀà, ¼ÓÈëµ½ÈİÆ÷
+		//¶ÔÓÚÎÒÃÇÒª×¢²áµÄbean, ¸øbean½øĞĞ·â×°,
 		if(bean1 && bean2){
 			RootBeanDefinition beanDefinition = new RootBeanDefinition(Pig.class);
 			registry.registerBeanDefinition("pig", beanDefinition);

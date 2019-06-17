@@ -11,16 +11,16 @@ public class WinCondition implements Condition{
 	
 	
 	/*
-	*ConditionContext: åˆ¤æ–­æ¡ä»¶å¯ä»¥ä½¿ç”¨çš„ä¸Šä¸‹æ–‡(ç¯å¢ƒ)
-	*AnnotatedTypeMetadata: æ³¨è§£çš„ä¿¡æ¯
+	*ConditionContext: ÅĞ¶ÏÌõ¼ş¿ÉÒÔÊ¹ÓÃµÄÉÏÏÂÎÄ(»·¾³)
+	*AnnotatedTypeMetadata: ×¢½âµÄĞÅÏ¢
 	*
 	*/
 	@Override
 	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-		// TODO æ˜¯å¦ä¸ºWINDOWç³»ç»Ÿ
-		//èƒ½è·å–åˆ°IOCå®¹å™¨æ­£åœ¨ä½¿ç”¨çš„beanFactory
+		// TODO ÊÇ·ñÎªWINDOWÏµÍ³
+		//ÄÜ»ñÈ¡µ½IOCÈİÆ÷ÕıÔÚÊ¹ÓÃµÄbeanFactory
 		ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
-		//è·å–å½“å‰ç¯å¢ƒå˜é‡(åŒ…æ‹¬æˆ‘ä»¬æ“ä½œç³»ç»Ÿæ˜¯WINè¿˜æ˜¯LINUX??)
+		//»ñÈ¡µ±Ç°»·¾³±äÁ¿(°üÀ¨ÎÒÃÇ²Ù×÷ÏµÍ³ÊÇWIN»¹ÊÇLINUX??)
 		Environment environment = context.getEnvironment();
 		String os_name = environment.getProperty("os.name");
 		if(os_name.contains("Windows")){

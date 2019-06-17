@@ -9,20 +9,20 @@ import com.enjoy.cap1.Person;
 public class Cap5MainConfig {
 	@Bean("person")
 	public Person person(){
-		System.out.println("ç»™å®¹å™¨ä¸­æ·»åŠ person.......");
+		System.out.println("¸øÈİÆ÷ÖĞÌí¼Óperson.......");
 		return new Person("person",20);
 	}
 	
 	@Conditional(WinCondition.class)
 	@Bean("lison")
 	public Person lison(){
-		System.out.println("ç»™å®¹å™¨ä¸­æ·»åŠ lison.......");
+		System.out.println("¸øÈİÆ÷ÖĞÌí¼Ólison.......");
 		return new Person("Lison",58);
 	}
 	@Conditional(LinCondition.class)
-	@Bean("james")//beanåœ¨å®¹å™¨ä¸­çš„IDä¸ºjames, IOCå®¹å™¨MAP,  map.put("id",value)
+	@Bean("james")//beanÔÚÈİÆ÷ÖĞµÄIDÎªjames, IOCÈİÆ÷MAP,  map.put("id",value)
 	public Person james(){
-		System.out.println("ç»™å®¹å™¨ä¸­æ·»åŠ james.......");
+		System.out.println("¸øÈİÆ÷ÖĞÌí¼Ójames.......");
 		return new Person("james",20);
 	}
 	

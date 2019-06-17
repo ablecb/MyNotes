@@ -14,9 +14,9 @@ public class MainTest2 {
 		ApplicationContext app = new AnnotationConfigApplicationContext(MainConfig.class);
 		
 		//从容器中获取bean
-		Person person = (Person) app.getBean("XXX");
+		//Person person = (Person) app.getBean("person01");
 		
-		System.out.println(person);
+		//System.out.println(person);
 		
 		String[] namesForBean = app.getBeanNamesForType(Person.class);
 		for(String name:namesForBean){
