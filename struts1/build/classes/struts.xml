@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+<!-- <package name="p12" namespace="/a/b/c"> -->
+	
+	
+		<!-- 完全匹配对应的action -->	
+		 
+		
+		<!--  <action name="my2" class="com.ys.p1.MyAction" method="m2"></action>
+		
+		<action name="my3" class="com.ys.p1.MyAction" method="m3"></action>
+		 -->
+		<!-- 通配符方式访问 -->
+		<!-- <action name="*_*" class="com.ys.p1.{1}" method="{2}"></action> -->
+		
+		<!-- <action name="my" class="com.ys.p1.MyAction"></action> -->
+		
+		<!-- <action name="my1"  class="com.ys.p1.MyAction" method="m1"></action> -->
+		
+<!-- </package>  -->
+	<!-- <package name="p2" namespace="/a/b">
+		<action name="my1"  class="com.ys.p1.MyAction2" method="m1"></action>
+	</package> -->
+	
+	<!-- <package name="p3" namespace="/a">
+		<action name="my1"  class="com.ys.p1.MyAction3" method="m1"></action>
+	</package> -->
+<!-- 	<package name="p3" namespace="/a">
+		<action name="my2"  class="com.ys.p1.MyAction" method="m1"></action>
+	</package>
+	
+	<package name="p4" namespace="/" extends="p3">
+		<action name="my1"  class="com.ys.p1.MyAction4" method="m1"></action>
+		<action name="my5"  class="com.ys.p1.MyAction5"></action>
+	</package> -->
+	
+	
+	
+	
+	<package name="p1" namespace="/" extends="struts-default">
+		<interceptors>
+			<!-- 声明一个拦截器 -->
+			<interceptor name="mIn1" class="com.ys.p2.MyIntercepter1"/>
+			<interceptor name="mIn2" class="com.ys.p2.MyIntercepter2"/>
+			<interceptor name="mIn3" class="com.ys.p2.MyIntercepter3">
+				<param name="excludeMethods">selStu</param>
+			</interceptor>
+			<!-- 声明一个拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="mIn1"/>
+				<interceptor-ref name="mIn2"/>
+				<interceptor-ref name="mIn3"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		<action name="user" class="com.ys.p2.UserAction" method="addUser">
+			<interceptor-ref name="mIn1"></interceptor-ref>
+			<interceptor-ref name="myStack"></interceptor-ref>
+		</action>
+		<action name="set" class="com.ys.p2.UserAction" method="setUser"></action>
+		<action name="user2" class="com.ys.p2.UserAction2" method="addUser"></action>		
+		<action name="s1" class="com.ys.p2.ServletAction" method="s1"></action>
+		<action name="s2" class="com.ys.p2.ServletAction" method="s2"></action>
+		<action name="up" class="com.ys.p2.UploadAction" method="upload"></action>
+		<action name="my1" class="com.ys.p1.MyAction" method="m1"></action>
+		<action name="login"  class="com.ys.p2.LoginAction" method="login">
+			<!-- 视图关系映射 -->
+			<result name="sc">success.html</result>
+			<result name="er">error.html</result>
+		</action>
+		
+		<action name="caobo" class="cb.test.userAction" method="login">
+			<result name="y">success.html</result>
+			<result name="n">error.html</result>
+		</action>
+		<action name="myup" class="cb.test.MyUp" method="downLoad"></action>
+	</package>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</struts>
